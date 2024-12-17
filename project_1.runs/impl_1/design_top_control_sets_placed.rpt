@@ -1,0 +1,95 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Tue Dec 17 22:38:55 2024
+| Host         : Yunseokseo running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file design_top_control_sets_placed.rpt
+| Design       : design_top
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    17 |
+|    Minimum number of control sets                        |    17 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    73 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    17 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     4 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     5 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     2 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              35 |           15 |
+| No           | No                    | Yes                    |              77 |           29 |
+| No           | Yes                   | No                     |               7 |            3 |
+| Yes          | No                    | No                     |               4 |            2 |
+| Yes          | No                    | Yes                    |              20 |            7 |
+| Yes          | Yes                   | No                     |              40 |           16 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++---------------------------------+-----------------------------------------+--------------------------------+------------------+----------------+--------------+
+|           Clock Signal          |              Enable Signal              |        Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
++---------------------------------+-----------------------------------------+--------------------------------+------------------+----------------+--------------+
+|  clockmaking/inst/clk_out2      |                                         |                                |                1 |              2 |         2.00 |
+|  ps2_kbd/pulse/Released         |                                         |                                |                1 |              2 |         2.00 |
+|  clockmaking/inst/clk_out1      | vgc/p_tick                              |                                |                2 |              4 |         2.00 |
+|  clockmaking/inst/clk_out1      | vgc/p_tick                              | vgc/v_count_reg_reg[9]_2       |                1 |              4 |         4.00 |
+|  clockmaking/inst/clk_out2      | ps2_kbd/ps2/shift                       | ps2_kbd/ps2/bit_cnt[3]_i_1_n_0 |                1 |              4 |         4.00 |
+|  clock_and_calendar/bin_clk/CLK | clock_and_calendar/bin_clk/hours_ctr0   | reset_IBUF                     |                1 |              4 |         4.00 |
+|  clock_and_calendar/bin_clk/CLK | clock_and_calendar/bin_clk/minutes_ctr0 | reset_IBUF                     |                2 |              6 |         3.00 |
+|  clock_and_calendar/bin_clk/CLK |                                         | reset_IBUF                     |                4 |              7 |         1.75 |
+|  clockmaking/inst/clk_out2      | ps2_kbd/ps2/output_strobe               | reset_IBUF                     |                7 |              9 |         1.29 |
+|  clockmaking/inst/clk_out2      | ps2_kbd/ps2/shift                       | reset_IBUF                     |                3 |             10 |         3.33 |
+|  vgc/p_tick                     |                                         | reset_IBUF                     |                3 |             10 |         3.33 |
+|  vgc/p_tick                     | vgc/v_count_next                        | reset_IBUF                     |                4 |             10 |         2.50 |
+|  clockmaking/inst/clk_out1      |                                         |                                |                5 |             11 |         2.20 |
+|  clockmaking/inst/clk_out2      |                                         | reset_IBUF                     |                5 |             11 |         2.20 |
+|  clockmaking/inst/clk_out2      | ps2_kbd/ps2/sel                         | ps2_kbd/ps2/rst_timer          |                4 |             13 |         3.25 |
+|  vgc/E[0]                       |                                         |                                |                8 |             20 |         2.50 |
+|  clockmaking/inst/clk_out1      |                                         | reset_IBUF                     |               20 |             56 |         2.80 |
++---------------------------------+-----------------------------------------+--------------------------------+------------------+----------------+--------------+
+
+
