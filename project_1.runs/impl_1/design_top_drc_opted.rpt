@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Wed Dec 18 22:19:08 2024
+| Date         : Wed Dec 18 22:38:32 2024
 | Host         : HYEON-OdysseyLaptop running 64-bit major release  (build 9200)
 | Command      : report_drc -file design_top_drc_opted.rpt -pb design_top_drc_opted.pb -rpx design_top_drc_opted.rpx
 | Design       : design_top

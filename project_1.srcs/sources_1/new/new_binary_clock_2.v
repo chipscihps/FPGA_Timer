@@ -89,7 +89,7 @@ module new_binary_clock_2 (
         else
             if (seconds_ctr == 59)
                 seconds_ctr <= 6'b0;
-            else if (seconds_ctr > 0)
+            else (seconds_ctr 
                 seconds_ctr <= seconds_ctr - 1;
             
     // minutes counter reg control       
