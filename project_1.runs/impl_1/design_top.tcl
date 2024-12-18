@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/Users/YunseokSeo/Desktop/project_1/project_1.runs/impl_1/design_top.tcl"
+  variable script "C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.runs/impl_1/design_top.tcl"
   variable category "vivado_impl"
 }
 
@@ -130,17 +130,17 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir C:/Users/YunseokSeo/Desktop/project_1/project_1.cache/wt [current_project]
-  set_property parent.project_path C:/Users/YunseokSeo/Desktop/project_1/project_1.xpr [current_project]
-  set_property ip_output_repo C:/Users/YunseokSeo/Desktop/project_1/project_1.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.cache/wt [current_project]
+  set_property parent.project_path C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.xpr [current_project]
+  set_property ip_output_repo C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_CDC [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/Users/YunseokSeo/Desktop/project_1/project_1.runs/synth_1/design_top.dcp
-  read_ip -quiet C:/Users/YunseokSeo/Desktop/project_1/project_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  add_files -quiet C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.runs/synth_1/design_top.dcp
+  read_ip -quiet C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/YunseokSeo/Desktop/Nexys-A7-100T-Master.xdc
+  read_xdc C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/Nexys-A7-100T-Master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

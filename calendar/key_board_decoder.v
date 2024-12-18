@@ -27,7 +27,7 @@ always@(posedge Released)begin
         
     if(sit == 3'd6)
         space <= 1;
-    else
+    else 
         space <= 0;
 end 
 

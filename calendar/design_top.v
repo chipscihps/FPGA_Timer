@@ -40,8 +40,12 @@ clk_wiz_0 clockmaking(.clk_in1(clk_100MHz),.clk_out1(clk_100), .clk_out2(clk_50)
     wire Released;
     wire space;
     wire enter;
+    
     wire [3:0] hr_10s, hr_1s, min_10s, min_1s, sec_10s, sec_1s;
     wire [3:0] m_10s, m_1s, d_10s, d_1s, c_10s, c_1s, y_10s, y_1s;
+    
+    wire [3:0] hr_10s_2, hr_1s_2, min_10s_2, min_1s_2, sec_10s_2, sec_1s_2;
+    wire [3:0] m_10s_2, m_1s_2, d_10s_2, d_1s_2, c_10s_2, c_1s_2, y_10s_2, y_1s_2;
     
 wire gamestart;
     
@@ -86,23 +90,23 @@ wire gamestart;
         .video_on(video_on),
         .x(w_x),
         .y(w_y),
-        .sec_10s(sec_10s),
-        .sec_1s(sec_1s),
-        .min_10s(min_10s),
-        .min_1s(min_1s),
-        .hr_10s(hr_10s),
-        .hr_1s(hr_1s),
-        .am_pm(am_pm),
-        .m_10s(m_10s),
-        .m_1s(m_1s),
-        .d_10s(d_10s),
-        .d_1s(d_1s),
-        .y_10s(y_10s),
-        .y_1s(y_1s),
-        .c_10s(c_10s),
-        .c_1s(c_1s),
-        .rgb(rgb_next1)
-        );
+        .sec_10s(sec_10s_2),
+        .sec_1s(sec_1s_2),
+        .min_10s(min_10s_2),
+        .min_1s(min_1s_2),
+        .hr_10s(hr_10s_2),
+        .hr_1s(hr_1s_2),
+        .am_pm(am_pm_2),
+        .m_10s(m_10s_2),
+        .m_1s(m_1s_2),
+        .d_10s(d_10s_2),
+        .d_1s(d_1s_2),
+        .y_10s(y_10s_2),
+        .y_1s(y_1s_2),
+        .c_10s(c_10s_2),
+        .c_1s(c_1s_2),
+        .rgb(rgb_next1_2)
+    );
 
     top_clk_cal clock_and_calendar(
         .clk_100MHz(clk_100),
@@ -132,6 +136,34 @@ wire gamestart;
         .c_1s(c_1s)
         );
         
+    top_clk_cal_2 StopWatch(
+        .clk_100MHz(clk_100),
+        .reset(reset),
+        .inc_hour(inc_hr_2),
+        .inc_minute(inc_min_2),
+        .inc_month(inc_month_2), 
+        .inc_day(inc_day_2),
+        .inc_year(inc_year_2),
+        .inc_century(inc_cent_2),
+        .sw_am_pm(set_am_pm_2),
+        .am_pm(am_pm_2),
+        .o_1Hz(blink_2),
+        .hr_10s(hr_10s_2),
+        .hr_1s(hr_1s_2),
+        .min_10s(min_10s_2),
+        .min_1s(min_1s_2),
+        .sec_10s(sec_10s_2),
+        .sec_1s(sec_1s_2),
+        .m_10s(m_10s_2),
+        .m_1s(m_1s_2),
+        .d_10s(d_10s_2),
+        .d_1s(d_1s_2),
+        .y_10s(y_10s_2),
+        .y_1s(y_1s_2),
+        .c_10s(c_10s_2),
+        .c_1s(c_1s_2)
+        );
+        
 ps2_kbd_top ps2_kbd (
     .clk(clk_50), 
     .rst(reset), 
@@ -157,23 +189,17 @@ key_board_decoder key_decoder(
     always @(posedge clk_100)begin 
         if(p_tick)
             rgb_reg <= rgb_next;
-            end 
+    end 
             
     assign rgb = rgb_reg;
 
-  always @(posedge clk_100)begin 
+    always @(posedge clk_100)begin 
         if(p_tick)
-            rgb_reg1 <= rgb_next1;
-            
-            end 
+            rgb_reg1 <= rgb_next1;            
+    end 
     assign rgb1 = rgb_reg1;
 
-assign  vga=(!gamestart)?rgb:rgb1;
-
-
-gamestarting start(.clk(clk_100), .reset(reset), .enter(enter), .space(space), .gamestart(gamestart));
-
-
+assign  vga=(!space)?rgb:rgb1;
 
 
 endmodule

@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Tue Dec 17 22:40:27 2024
-| Host         : Yunseokseo running 64-bit major release  (build 9200)
+| Date         : Wed Dec 18 22:19:46 2024
+| Host         : HYEON-OdysseyLaptop running 64-bit major release  (build 9200)
 | Command      : report_methodology -file design_top_methodology_drc_routed.rpt -pb design_top_methodology_drc_routed.pb -rpx design_top_methodology_drc_routed.rpx
 | Design       : design_top
 | Device       : xc7a100tcsg324-1
@@ -23,14 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 85
+             Violations found: 78
 +-----------+------------------+------------------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                                      | Violations |
 +-----------+------------------+------------------------------------------------------------------+------------+
 | TIMING-6  | Critical Warning | No common primary clock between related clocks                   | 4          |
-| TIMING-17 | Critical Warning | Non-clocked sequential cell                                      | 39         |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                                      | 38         |
 | TIMING-18 | Warning          | Missing input or output delay                                    | 19         |
-| TIMING-20 | Warning          | Non-clocked latch                                                | 20         |
+| TIMING-20 | Warning          | Non-clocked latch                                                | 14         |
 | TIMING-56 | Warning          | Missing logically or physically excluded clock groups constraint | 3          |
 +-----------+------------------+------------------------------------------------------------------+------------+
 
@@ -143,110 +143,105 @@ Related violations: <none>
 
 TIMING-17#18 Critical Warning
 Non-clocked sequential cell  
-The clock pin key_decoder/enter_reg/C is not reached by a timing clock
+The clock pin key_decoder/space_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#19 Critical Warning
 Non-clocked sequential cell  
-The clock pin key_decoder/space_reg/C is not reached by a timing clock
+The clock pin vgc/h_count_next_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#20 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/h_count_next_reg[0]/C is not reached by a timing clock
+The clock pin vgc/h_count_next_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#21 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/h_count_next_reg[1]/C is not reached by a timing clock
+The clock pin vgc/h_count_next_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#22 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/h_count_next_reg[2]/C is not reached by a timing clock
+The clock pin vgc/h_count_next_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#23 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/h_count_next_reg[3]/C is not reached by a timing clock
+The clock pin vgc/h_count_next_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#24 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/h_count_next_reg[4]/C is not reached by a timing clock
+The clock pin vgc/h_count_next_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#25 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/h_count_next_reg[5]/C is not reached by a timing clock
+The clock pin vgc/h_count_next_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#26 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/h_count_next_reg[6]/C is not reached by a timing clock
+The clock pin vgc/h_count_next_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#27 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/h_count_next_reg[7]/C is not reached by a timing clock
+The clock pin vgc/h_count_next_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#28 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/h_count_next_reg[8]/C is not reached by a timing clock
+The clock pin vgc/h_count_next_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#29 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/h_count_next_reg[9]/C is not reached by a timing clock
+The clock pin vgc/v_count_next_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#30 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/v_count_next_reg[0]/C is not reached by a timing clock
+The clock pin vgc/v_count_next_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#31 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/v_count_next_reg[1]/C is not reached by a timing clock
+The clock pin vgc/v_count_next_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#32 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/v_count_next_reg[2]/C is not reached by a timing clock
+The clock pin vgc/v_count_next_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#33 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/v_count_next_reg[3]/C is not reached by a timing clock
+The clock pin vgc/v_count_next_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#34 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/v_count_next_reg[4]/C is not reached by a timing clock
+The clock pin vgc/v_count_next_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#35 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/v_count_next_reg[5]/C is not reached by a timing clock
+The clock pin vgc/v_count_next_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#36 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/v_count_next_reg[6]/C is not reached by a timing clock
+The clock pin vgc/v_count_next_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#37 Critical Warning
 Non-clocked sequential cell  
-The clock pin vgc/v_count_next_reg[7]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#38 Critical Warning
-Non-clocked sequential cell  
 The clock pin vgc/v_count_next_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#39 Critical Warning
+TIMING-17#38 Critical Warning
 Non-clocked sequential cell  
 The clock pin vgc/v_count_next_reg[9]/C is not reached by a timing clock
 Related violations: <none>
@@ -414,36 +409,6 @@ Related violations: <none>
 TIMING-20#14 Warning
 Non-clocked latch  
 The latch pg1/row_addr_reg[3] cannot be properly analyzed as its control pin pg1/row_addr_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#15 Warning
-Non-clocked latch  
-The latch pg2/char_addr_reg[0] cannot be properly analyzed as its control pin pg2/char_addr_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#16 Warning
-Non-clocked latch  
-The latch pg2/char_addr_reg[1] cannot be properly analyzed as its control pin pg2/char_addr_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#17 Warning
-Non-clocked latch  
-The latch pg2/char_addr_reg[2] cannot be properly analyzed as its control pin pg2/char_addr_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#18 Warning
-Non-clocked latch  
-The latch pg2/char_addr_reg[3] cannot be properly analyzed as its control pin pg2/char_addr_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#19 Warning
-Non-clocked latch  
-The latch pg2/char_addr_reg[4] cannot be properly analyzed as its control pin pg2/char_addr_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#20 Warning
-Non-clocked latch  
-The latch pg2/char_addr_reg[5] cannot be properly analyzed as its control pin pg2/char_addr_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-56#1 Warning

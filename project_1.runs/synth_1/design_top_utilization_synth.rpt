@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Tue Dec 17 22:37:26 2024
-| Host         : Yunseokseo running 64-bit major release  (build 9200)
+| Date         : Wed Dec 18 22:18:29 2024
+| Host         : HYEON-OdysseyLaptop running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_top_utilization_synth.rpt -pb design_top_utilization_synth.pb
 | Design       : design_top
 | Device       : 7a100tcsg324-1
@@ -30,14 +30,14 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  298 |     0 |     63400 |  0.47 |
-|   LUT as Logic          |  298 |     0 |     63400 |  0.47 |
+| Slice LUTs*             |  228 |     0 |     63400 |  0.36 |
+|   LUT as Logic          |  228 |     0 |     63400 |  0.36 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |  183 |     0 |    126800 |  0.14 |
-|   Register as Flip Flop |  163 |     0 |    126800 |  0.13 |
-|   Register as Latch     |   20 |     0 |    126800 |  0.02 |
-| F7 Muxes                |    6 |     0 |     31700 |  0.02 |
-| F8 Muxes                |    1 |     0 |     15850 | <0.01 |
+| Slice Registers         |  171 |     0 |    126800 |  0.13 |
+|   Register as Flip Flop |  157 |     0 |    126800 |  0.12 |
+|   Register as Latch     |   14 |     0 |    126800 |  0.01 |
+| F7 Muxes                |   16 |     0 |     31700 |  0.05 |
+| F8 Muxes                |    0 |     0 |     15850 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -55,9 +55,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 6     |          Yes |           - |          Set |
-| 111   |          Yes |           - |        Reset |
+| 105   |          Yes |           - |        Reset |
 | 2     |          Yes |         Set |            - |
-| 64    |          Yes |       Reset |            - |
+| 58    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -147,23 +147,22 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |  165 |                 LUT |
+| LUT6     |  119 |                 LUT |
 | FDCE     |   91 |        Flop & Latch |
-| LUT5     |   84 |                 LUT |
-| FDRE     |   64 |        Flop & Latch |
-| LUT2     |   45 |                 LUT |
-| LUT4     |   32 |                 LUT |
-| LUT3     |   26 |                 LUT |
-| LDCE     |   20 |        Flop & Latch |
+| LUT5     |   74 |                 LUT |
+| FDRE     |   58 |        Flop & Latch |
+| LUT2     |   26 |                 LUT |
+| LUT3     |   19 |                 LUT |
+| LUT4     |   17 |                 LUT |
+| MUXF7    |   16 |               MuxFx |
 | OBUF     |   15 |                  IO |
+| LDCE     |   14 |        Flop & Latch |
 | CARRY4   |   12 |          CarryLogic |
-| LUT1     |    9 |                 LUT |
-| MUXF7    |    6 |               MuxFx |
+| LUT1     |    8 |                 LUT |
 | IBUF     |    6 |                  IO |
 | FDPE     |    6 |        Flop & Latch |
 | FDSE     |    2 |        Flop & Latch |
 | RAMB18E1 |    1 |        Block Memory |
-| MUXF8    |    1 |               MuxFx |
 +----------+------+---------------------+
 
 

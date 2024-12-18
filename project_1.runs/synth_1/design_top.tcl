@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/YunseokSeo/Desktop/project_1/project_1.runs/synth_1/design_top.tcl"
+  variable script "C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.runs/synth_1/design_top.tcl"
   variable category "vivado_synth"
 }
 
@@ -79,34 +79,36 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/YunseokSeo/Desktop/project_1/project_1.cache/wt [current_project]
-set_property parent.project_path C:/Users/YunseokSeo/Desktop/project_1/project_1.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.cache/wt [current_project]
+set_property parent.project_path C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.xpr [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/YunseokSeo/Desktop/project_1/project_1.cache/ip [current_project]
+set_property ip_output_repo c:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  C:/Users/YunseokSeo/Desktop/project_1/calendar/calendar.v
-  C:/Users/YunseokSeo/Desktop/project_1/calendar/clock_digit_rom.v
-  C:/Users/YunseokSeo/Desktop/project_1/calendar/debounce_pulse.v
-  C:/Users/YunseokSeo/Desktop/project_1/project_1.srcs/sources_1/new/gamestarting.v
-  C:/Users/YunseokSeo/Desktop/project_1/calendar/key_board_decoder.v
-  C:/Users/YunseokSeo/Desktop/project_1/calendar/new_binary_clock.v
-  C:/Users/YunseokSeo/Desktop/project_1/calendar/pixel_gen.v
-  C:/Users/YunseokSeo/Desktop/project_1/project_1.srcs/sources_1/new/pixel_gen_2.v
-  C:/Users/YunseokSeo/Desktop/project_1/calendar/ps2_kbd_new.v
-  C:/Users/YunseokSeo/Desktop/project_1/calendar/ps2_kbd_top.v
-  C:/Users/YunseokSeo/Desktop/project_1/calendar/top_clk_cal.v
-  C:/Users/YunseokSeo/Desktop/project_1/calendar/vga_controller.v
-  C:/Users/YunseokSeo/Desktop/project_1/calendar/design_top.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/calendar.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/new/calendar_2.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/clock_digit_rom.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/debounce_pulse.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/key_board_decoder.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/new_binary_clock.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/new/new_binary_clock_2.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/pixel_gen.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/new/pixel_gen_2.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/ps2_kbd_new.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/ps2_kbd_top.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/top_clk_cal.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/new/top_clk_cal_2.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/vga_controller.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/design_top.v
 }
-read_ip -quiet C:/Users/YunseokSeo/Desktop/project_1/project_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all c:/Users/YunseokSeo/Desktop/project_1/project_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/YunseokSeo/Desktop/project_1/project_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/YunseokSeo/Desktop/project_1/project_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all c:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -117,8 +119,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/YunseokSeo/Desktop/Nexys-A7-100T-Master.xdc
-set_property used_in_implementation false [get_files C:/Users/YunseokSeo/Desktop/Nexys-A7-100T-Master.xdc]
+read_xdc C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/Nexys-A7-100T-Master.xdc
+set_property used_in_implementation false [get_files C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/Nexys-A7-100T-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

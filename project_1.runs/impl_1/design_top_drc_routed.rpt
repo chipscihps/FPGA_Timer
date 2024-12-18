@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Tue Dec 17 22:40:24 2024
-| Host         : Yunseokseo running 64-bit major release  (build 9200)
+| Date         : Wed Dec 18 22:19:45 2024
+| Host         : HYEON-OdysseyLaptop running 64-bit major release  (build 9200)
 | Command      : report_drc -file design_top_drc_routed.rpt -pb design_top_drc_routed.pb -rpx design_top_drc_routed.rpx
 | Design       : design_top
 | Device       : xc7a100tcsg324-1
@@ -50,12 +50,12 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net ps2_kbd/pulse/Released is a gated clock net sourced by a combinational pin ps2_kbd/pulse/enter_i_2/O, cell ps2_kbd/pulse/enter_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ps2_kbd/pulse/Released is a gated clock net sourced by a combinational pin ps2_kbd/pulse/space_i_2/O, cell ps2_kbd/pulse/space_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net vgc/E[0] is a gated clock net sourced by a combinational pin vgc/char_addr_reg[5]_i_2/O, cell vgc/char_addr_reg[5]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net vgc/E[0] is a gated clock net sourced by a combinational pin vgc/bit_addr_reg[2]_i_1/O, cell vgc/bit_addr_reg[2]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
@@ -65,8 +65,8 @@ Related violations: <none>
 
 PLHOLDVIO-2#1 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT ps2_kbd/pulse/enter_i_2 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
-key_decoder/enter_reg, key_decoder/space_reg
+A LUT ps2_kbd/pulse/space_i_2 is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+key_decoder/space_reg
 Related violations: <none>
 
 PLHOLDVIO-2#2 Warning
