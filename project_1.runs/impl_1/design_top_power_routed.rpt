@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Thu Dec 19 22:18:38 2024
+| Date             : Thu Dec 19 23:52:51 2024
 | Host             : HYEON-OdysseyLaptop running 64-bit major release  (build 9200)
 | Command          : report_power -file design_top_power_routed.rpt -pb design_top_power_summary_routed.pb -rpx design_top_power_routed.rpx
 | Design           : design_top
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |       10 |       --- |             --- |
-| Slice Logic    |    <0.001 |      696 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      341 |     63400 |            0.54 |
-|   Register     |    <0.001 |      245 |    126800 |            0.19 |
-|   CARRY4       |    <0.001 |       20 |     15850 |            0.13 |
+| Slice Logic    |    <0.001 |      727 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      347 |     63400 |            0.55 |
+|   Register     |    <0.001 |      263 |    126800 |            0.21 |
+|   CARRY4       |    <0.001 |       24 |     15850 |            0.15 |
 |   F7/F8 Muxes  |    <0.001 |       16 |     63400 |            0.03 |
-|   Others       |     0.000 |       21 |       --- |             --- |
-| Signals        |    <0.001 |      576 |       --- |             --- |
+|   Others       |     0.000 |       23 |       --- |             --- |
+| Signals        |    <0.001 |      605 |       --- |             --- |
 | Block RAM      |     0.002 |      0.5 |       135 |            0.37 |
 | MMCM           |     0.106 |        1 |         6 |           16.67 |
-| I/O            |     0.025 |       24 |       210 |           11.43 |
+| I/O            |     0.025 |       25 |       210 |           11.90 |
 | Static Power   |     0.098 |          |           |                 |
 | Total          |     0.235 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+

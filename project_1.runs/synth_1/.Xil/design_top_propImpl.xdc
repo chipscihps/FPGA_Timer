@@ -51,3 +51,5 @@ set_property src_info {type:XDC file:1 line:89 export:INPUT save:INPUT read:READ
 set_property -dict { PACKAGE_PIN F4    IOSTANDARD LVCMOS33 } [get_ports { ps2_clk }]; #IO_L13P_T2_MRCC_35 Sch=ps2_clk
 set_property src_info {type:XDC file:1 line:90 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN B2    IOSTANDARD LVCMOS33 } [get_ports { ps2_data }];
+set_property src_info {type:XDC file:1 line:135 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN A11   IOSTANDARD LVCMOS33 } [get_ports { speaker }]; #IO_L4N_T0_15 Sch=aud_pwm

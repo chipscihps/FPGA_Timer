@@ -22,7 +22,8 @@ module design_top(
     output blink,               // LED[1], 1Hz signal
     output hsync,               // to VGA Connector
     output vsync,               // to VGA Connector
-    output [11:0] vga          // to DAC, to VGA Connector
+    output [11:0] vga,
+    output speaker       // to DAC, to VGA Connector
     );
 
 clk_wiz_0 clockmaking(.clk_in1(clk_100MHz),.clk_out1(clk_100), .clk_out2(clk_50), .reset(1'b0) );
@@ -46,7 +47,7 @@ clk_wiz_0 clockmaking(.clk_in1(clk_100MHz),.clk_out1(clk_100), .clk_out2(clk_50)
     wire [3:0] m_10s_2, m_1s_2, d_10s_2, d_1s_2, c_10s_2, c_1s_2, y_10s_2, y_1s_2;
     
 wire gamestart;
-    
+    wire soundcontol;
     
     vga_controller vgc(
         .clk_100MHz(clk_100),
@@ -183,10 +184,19 @@ key_board_decoder key_decoder(
     .scancode(scancode),
     .Released(Released),
     .enter(enter),
-    .space(space),
-    .reset(reset)
+    .space(space)
 );
         
+      
+
+      
+speaker speakering(      
+.clk(clk_100),     
+.event1(soundcontol),
+.speaker(speaker)      
+);      
+      
+assign soundcontol=(min_1s_2==4'b0001)?1:0;
         
         
     

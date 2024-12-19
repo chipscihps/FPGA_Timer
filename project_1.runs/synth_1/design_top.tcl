@@ -100,6 +100,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/new/pixel_gen_2.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/ps2_kbd_new.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/ps2_kbd_top.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/new/speaker.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/top_clk_cal.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/new/top_clk_cal.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/vga_controller.v

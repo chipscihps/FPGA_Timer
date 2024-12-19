@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date                      : Thu Dec 19 22:18:05 2024
+| Date                      : Thu Dec 19 23:52:18 2024
 | Host                      : HYEON-OdysseyLaptop running 64-bit major release  (build 9200)
 | Command                   : report_io -file design_top_io_placed.rpt
 | Design                    : design_top
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            26 |
+|            27 |
 +---------------+
 
 
@@ -45,7 +45,7 @@ Table of Contents
 | A8         |             | High Range | IO_L12N_T1_MRCC_16           | User IO     |             |      16 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | A9         |             | High Range | IO_L14N_T2_SRCC_16           | User IO     |             |      16 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | A10        |             | High Range | IO_L14P_T2_SRCC_16           | User IO     |             |      16 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| A11        |             | High Range | IO_L4N_T0_15                 | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| A11        | speaker     | High Range | IO_L4N_T0_15                 | OUTPUT      | LVCMOS33    |      15 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | A12        |             |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | A13        |             | High Range | IO_L9P_T1_DQS_AD3P_15        | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | A14        |             | High Range | IO_L9N_T1_DQS_AD3N_15        | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

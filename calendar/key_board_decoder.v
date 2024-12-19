@@ -3,32 +3,31 @@
 module key_board_decoder(
     input [8:0] scancode,
     input Released,
-    input reset,
     output reg enter,space
 );
 
 
-reg [2:0] sit;
+reg [2:0] eventing;
 
 always@(posedge Released)begin 
     case(scancode)
 
-    'd13:sit = 3'd5;
-    'h20:sit = 3'd6;
-    default: sit = 3'd0;
+    'd13:eventing = 3'b101;
+    'h20:eventing = 3'b110;
+    default: eventing = 3'd0;
     endcase 
     
 
         
-    if(sit == 3'd5)
+    if(eventing == 3'b101)
         enter <= 1;
     else
         enter <= 0;
         
-    if(sit == 3'd6)
-        space <= 1;
+    if(eventing == 3'b110)
+        space <= 1'b1;
     else 
-        space <= 0;
+        space <= 1'b0;
 end 
 
 endmodule
