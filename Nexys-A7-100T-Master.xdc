@@ -29,6 +29,7 @@ set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports {reset}]
 # LEDs
 ## LED 1
 set_property -dict { PACKAGE_PIN H17   IOSTANDARD LVCMOS33 } [get_ports {blink}]; #IO_L18P_T2_A24_15 Sch=led[0]
+#set_property -dict { PACKAGE_PIN K15   IOSTANDARD LVCMOS33 } [get_ports {TC}]; #IO_L18P_T2_A24_15 Sch=led[0]
 #set_property PACKAGE_PIN E19     [get_ports {blink}]               
 #set_property IOSTANDARD LVCMOS33 [get_ports {blink}]
 

@@ -8,7 +8,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module calendar_2 (
+module calendar_2(
     input clk_100MHz,           // 100MHz from Basys 3
     input tick_1Hz,             // 1Hz signal from binary clock module
     input reset,                // system reset
@@ -194,7 +194,7 @@ module calendar_2 (
     // year register control
     always @(posedge tick_1Hz or posedge reset) begin
         if(reset)
-            year = 7'd00;
+            year = 7'd0;
         else
             if(w_year | end_of_year)
                 if(year == 99)
@@ -206,7 +206,7 @@ module calendar_2 (
     // century register control
     always @(posedge tick_1Hz or posedge reset) begin
         if(reset)
-            century = 7'd00;
+            century = 7'd0;
         else
             if(w_cent | end_of_century)
                 if(century == 99)

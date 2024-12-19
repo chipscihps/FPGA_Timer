@@ -56,9 +56,9 @@ module calendar(
 
     
     // calendar regs and logic
-    reg [3:0] month = 1;
-    reg [4:0] day = 1;
-    reg [6:0] year = 22;
+    reg [3:0] month = 12;
+    reg [4:0] day = 20;
+    reg [6:0] year = 24;
     reg [6:0] century = 20;
     
     wire end_of_year;
@@ -71,7 +71,7 @@ module calendar(
     // day register control
     always @(posedge tick_1Hz or posedge reset) begin
         if(reset)
-            day = 5'd1;
+            day = 5'd20;
         else
             if(w_day | end_of_day)
                 case(month)

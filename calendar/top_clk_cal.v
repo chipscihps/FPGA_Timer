@@ -7,7 +7,7 @@
 // drives the calendar through the w_end_of_day signal.
 //////////////////////////////////////////////////////////////////////////////////
 
-module top_clk_cal(
+module top_clk_cal (
     input clk_100MHz,
     input reset,
     input inc_hour, inc_minute, inc_month, inc_day, inc_year, inc_century, sw_am_pm,
@@ -20,8 +20,7 @@ module top_clk_cal(
     
     calendar cal(
         .clk_100MHz(clk_100MHz),
-        .tick_1Hz(
-        ),
+        .tick_1Hz(),
         .reset(reset),
         .end_of_day(w_end_of_day),
         .inc_month(inc_month),

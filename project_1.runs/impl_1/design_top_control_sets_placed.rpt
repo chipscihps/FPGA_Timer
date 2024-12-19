@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Wed Dec 18 22:38:37 2024
+| Date         : Thu Dec 19 22:18:05 2024
 | Host         : HYEON-OdysseyLaptop running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file design_top_control_sets_placed.rpt
 | Design       : design_top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    17 |
-|    Minimum number of control sets                        |    17 |
+| Total control sets                                       |    23 |
+|    Minimum number of control sets                        |    23 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    75 |
+| Unused register locations in slices containing registers |    91 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    17 |
-| >= 0 to < 4        |     2 |
-| >= 4 to < 6        |     4 |
-| >= 6 to < 8        |     2 |
+| Total control sets |    23 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     5 |
+| >= 6 to < 8        |     4 |
 | >= 8 to < 10       |     1 |
-| >= 10 to < 12      |     5 |
+| >= 10 to < 12      |     4 |
 | >= 12 to < 14      |     1 |
-| >= 14 to < 16      |     0 |
-| >= 16              |     2 |
+| >= 14 to < 16      |     2 |
+| >= 16              |     3 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              33 |           13 |
-| No           | No                    | Yes                    |              77 |           29 |
-| No           | Yes                   | No                     |               7 |            3 |
-| Yes          | No                    | No                     |               4 |            2 |
-| Yes          | No                    | Yes                    |              20 |            6 |
+| No           | No                    | No                     |              48 |           19 |
+| No           | No                    | Yes                    |             116 |           44 |
+| No           | Yes                   | No                     |               7 |            2 |
+| Yes          | No                    | No                     |               4 |            3 |
+| Yes          | No                    | Yes                    |              30 |           11 |
 | Yes          | Yes                   | No                     |              40 |           17 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,26 +70,32 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+---------------------------------+-----------------------------------------+--------------------------------+------------------+----------------+--------------+
-|           Clock Signal          |              Enable Signal              |        Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
-+---------------------------------+-----------------------------------------+--------------------------------+------------------+----------------+--------------+
-|  ps2_kbd/pulse/Released         |                                         |                                |                1 |              1 |         1.00 |
-|  clockmaking/inst/clk_out2      |                                         |                                |                2 |              2 |         1.00 |
-|  clockmaking/inst/clk_out2      | ps2_kbd/ps2/shift                       | ps2_kbd/ps2/bit_cnt[3]_i_1_n_0 |                1 |              4 |         4.00 |
-|  clockmaking/inst/clk_out1      | vgc/p_tick                              |                                |                2 |              4 |         2.00 |
-|  clockmaking/inst/clk_out1      | vgc/p_tick                              | vgc/v_count_reg_reg[9]_8       |                1 |              4 |         4.00 |
-|  clock_and_calendar/bin_clk/CLK | clock_and_calendar/bin_clk/hours_ctr0   | reset_IBUF                     |                1 |              4 |         4.00 |
-|  clock_and_calendar/bin_clk/CLK | clock_and_calendar/bin_clk/minutes_ctr0 | reset_IBUF                     |                2 |              6 |         3.00 |
-|  clock_and_calendar/bin_clk/CLK |                                         | reset_IBUF                     |                4 |              7 |         1.75 |
-|  clockmaking/inst/clk_out2      | ps2_kbd/ps2/output_strobe               | reset_IBUF                     |                9 |              9 |         1.00 |
-|  clockmaking/inst/clk_out2      | ps2_kbd/ps2/shift                       | reset_IBUF                     |                2 |             10 |         5.00 |
-|  clockmaking/inst/clk_out1      |                                         |                                |                4 |             10 |         2.50 |
-|  vgc/p_tick                     |                                         | reset_IBUF                     |                3 |             10 |         3.33 |
-|  vgc/p_tick                     | vgc/v_count_next                        | reset_IBUF                     |                3 |             10 |         3.33 |
-|  clockmaking/inst/clk_out2      |                                         | reset_IBUF                     |                5 |             11 |         2.20 |
-|  clockmaking/inst/clk_out2      | ps2_kbd/ps2/sel                         | ps2_kbd/ps2/rst_timer          |                4 |             13 |         3.25 |
-|  vgc/E[0]                       |                                         |                                |                6 |             20 |         3.33 |
-|  clockmaking/inst/clk_out1      |                                         | reset_IBUF                     |               20 |             56 |         2.80 |
-+---------------------------------+-----------------------------------------+--------------------------------+------------------+----------------+--------------+
++-----------------------------------+-----------------------------------------+--------------------------------+------------------+----------------+--------------+
+|            Clock Signal           |              Enable Signal              |        Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------------+-----------------------------------------+--------------------------------+------------------+----------------+--------------+
+|  STOP_WATCH/bin_clk/r_1Hz_reg_n_0 |                                         | key_decoder/AR[0]              |                1 |              1 |         1.00 |
+|  ps2_kbd/pulse/Released           |                                         |                                |                1 |              1 |         1.00 |
+|  clockmaking/inst/clk_out2        |                                         |                                |                2 |              2 |         1.00 |
+|  clock_and_calendar/bin_clk/CLK   | clock_and_calendar/bin_clk/hours_ctr0   | reset_IBUF                     |                2 |              4 |         2.00 |
+|  STOP_WATCH/bin_clk/r_1Hz_reg_n_0 | clock_and_calendar/bin_clk/E[0]         | key_decoder/AR[0]              |                1 |              4 |         4.00 |
+|  clockmaking/inst/clk_out1        | vgc/p_tick                              |                                |                3 |              4 |         1.33 |
+|  clockmaking/inst/clk_out1        | vgc/p_tick                              | vgc/r_25MHz_reg[0]_0           |                1 |              4 |         4.00 |
+|  clockmaking/inst/clk_out2        | ps2_kbd/ps2/shift                       | ps2_kbd/ps2/bit_cnt[3]_i_1_n_0 |                1 |              4 |         4.00 |
+|                                   |                                         | reset_IBUF                     |                3 |              6 |         2.00 |
+|  clock_and_calendar/bin_clk/CLK   | clock_and_calendar/bin_clk/minutes_ctr0 | reset_IBUF                     |                3 |              6 |         2.00 |
+|  STOP_WATCH/bin_clk/r_1Hz_reg_n_0 | STOP_WATCH/bin_clk/seconds_ctr_1        | key_decoder/AR[0]              |                2 |              6 |         3.00 |
+|  clock_and_calendar/bin_clk/CLK   |                                         | reset_IBUF                     |                2 |              7 |         3.50 |
+|  clockmaking/inst/clk_out2        | ps2_kbd/ps2/output_strobe               | reset_IBUF                     |                8 |              9 |         1.12 |
+|  vgc/p_tick                       |                                         | reset_IBUF                     |                3 |             10 |         3.33 |
+|  vgc/p_tick                       | vgc/v_count_next                        | reset_IBUF                     |                3 |             10 |         3.33 |
+|  clockmaking/inst/clk_out2        | ps2_kbd/ps2/shift                       | reset_IBUF                     |                3 |             10 |         3.33 |
+|  clockmaking/inst/clk_out2        |                                         | reset_IBUF                     |                5 |             11 |         2.20 |
+|  clockmaking/inst/clk_out2        | ps2_kbd/ps2/sel                         | ps2_kbd/ps2/rst_timer          |                4 |             13 |         3.25 |
+|  vgc/E[0]                         |                                         |                                |                5 |             14 |         2.80 |
+|  vgc/v_count_reg_reg[8]_1[0]      |                                         |                                |                4 |             14 |         3.50 |
+|  clockmaking/inst/clk_out1        |                                         |                                |                7 |             17 |         2.43 |
+|  clockmaking/inst/clk_out1        |                                         | key_decoder/AR[0]              |               13 |             32 |         2.46 |
+|  clockmaking/inst/clk_out1        |                                         | reset_IBUF                     |               19 |             56 |         2.95 |
++-----------------------------------+-----------------------------------------+--------------------------------+------------------+----------------+--------------+
 
 

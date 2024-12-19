@@ -14,7 +14,7 @@
 // are incremented at posedge 1Hz signal while the corresponding button is held.
 ////////////////////////////////////////////////////////////////////////////////
 
-module new_binary_clock(
+module new_binary_clock (
     input clk_100MHz,                   // sys clock
     input reset,                        // reset clock
     input tick_hr,                      // to increment hours

@@ -90,15 +90,18 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/calendar.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/new/calendar_2.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/clock_digit_rom.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/debounce_pulse.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/key_board_decoder.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/new_binary_clock.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/new/new_binary_clock_2.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/pixel_gen.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/new/pixel_gen_2.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/ps2_kbd_new.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/ps2_kbd_top.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/top_clk_cal.v
+  C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/project_1.srcs/sources_1/new/top_clk_cal.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/vga_controller.v
   C:/Users/behyeon.kim/Documents/projects/Vivado/FPGA_Timer/calendar/design_top.v
 }

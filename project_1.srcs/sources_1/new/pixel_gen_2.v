@@ -164,11 +164,11 @@ module pixel_gen_2(
     
     
     // Clock
-    assign char_addr_h10 = {3'b011, hr_10s};
+    assign char_addr_h10 = 7'h30;
     assign row_addr_h10 = y[5:2];   // scaling to 32x64
     assign bit_addr_h10 = x[4:2];   // scaling to 32x64
     
-    assign char_addr_h1 = {3'b011, hr_1s};
+    assign char_addr_h1 = 7'h30;
     assign row_addr_h1 = y[5:2];   // scaling to 32x64
     assign bit_addr_h1 = x[4:2];   // scaling to 32x64
     
@@ -393,14 +393,14 @@ module pixel_gen_2(
                 row_addr = row_addr_ap;
                 bit_addr = bit_addr_ap;
                 if(digit_bit)
-                    rgb = 12'hF00;     // red
+                    rgb = 12'h0FF;     // aqua
             end
             else if(APM_on) begin
                 char_addr = char_addr_apm;
                 row_addr = row_addr_apm;
                 bit_addr = bit_addr_apm;
                 if(digit_bit)
-                    rgb = 12'hF00;     // red
+                    rgb = 12'h0FF;     // aqua
             end
             
             else if(Mo10_on) begin

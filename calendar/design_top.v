@@ -22,7 +22,7 @@ module design_top(
     output blink,               // LED[1], 1Hz signal
     output hsync,               // to VGA Connector
     output vsync,               // to VGA Connector
-    output [11:0] vga           // to DAC, to VGA Connector
+    output [11:0] vga          // to DAC, to VGA Connector
     );
 
 clk_wiz_0 clockmaking(.clk_in1(clk_100MHz),.clk_out1(clk_100), .clk_out2(clk_50), .reset(1'b0) );
@@ -30,16 +30,14 @@ clk_wiz_0 clockmaking(.clk_in1(clk_100MHz),.clk_out1(clk_100), .clk_out2(clk_50)
     
     wire [9:0] w_x, w_y;
     wire video_on, p_tick, am_pm;
-    reg [11:0] rgb_reg;
-    wire [11:0] rgb_next;
-    wire [11:0] rgb_next1;
-    reg [11:0] rgb_reg1;
-    wire [11:0] rgb;
-    wire [11:0] rgb1;
+    reg [11:0] rgb_reg, rgb_reg1;
+    
+    wire [11:0] rgb_next, rgb_next1;
+    wire [11:0] rgb, rgb1;
+    
     wire [8:0] scancode;
     wire Released;
-    wire space;
-    wire enter;
+    wire space, enter;
     
     wire [3:0] hr_10s, hr_1s, min_10s, min_1s, sec_10s, sec_1s;
     wire [3:0] m_10s, m_1s, d_10s, d_1s, c_10s, c_1s, y_10s, y_1s;
@@ -90,21 +88,24 @@ wire gamestart;
         .video_on(video_on),
         .x(w_x),
         .y(w_y),
-        .sec_10s(sec_10s),
-        .sec_1s(sec_1s),
-        .min_10s(min_10s),
-        .min_1s(min_1s),
-        .hr_10s(hr_10s),
-        .hr_1s(hr_1s),
+        
+        .sec_10s(sec_10s_2),
+        .sec_1s(sec_1s_2),
+        .min_10s(min_10s_2),
+        .min_1s(min_1s_2),
+        .hr_10s(hr_10s_2),
+        .hr_1s(hr_1s_2),
+        
         .am_pm(am_pm),
-        .m_10s(m_10s),
-        .m_1s(m_1s),
-        .d_10s(d_10s),
-        .d_1s(d_1s),
-        .y_10s(y_10s),
-        .y_1s(y_1s),
-        .c_10s(c_10s),
-        .c_1s(c_1s_2),
+        
+        .m_10s(m_10s_2),
+        .m_1s(m_1s_2),
+        .d_10s(d_10s_2),
+        .d_1s(d_1s_2),
+        .y_10s(y_10s_2),
+        .y_1s(y_1s_2),
+        .c_10s(c_10s_2),
+        .c_1s(c_1s_2_2),
         .rgb(rgb_next1)
     );
 
@@ -134,7 +135,38 @@ wire gamestart;
         .y_1s(y_1s),
         .c_10s(c_10s),
         .c_1s(c_1s)
-        );
+    );
+
+    top_clk_cal_2 STOP_WATCH (
+        .clk_100MHz(clk_100),
+        .reset(!space/*reset*/),
+        .inc_hour(inc_hr),
+        .inc_minute(inc_min),
+        .inc_month(inc_month), 
+        .inc_day(inc_day),
+        .inc_year(inc_year),
+        .inc_century(inc_cent),
+        
+        .sw_am_pm(),
+        .am_pm(),
+        
+        .o_1Hz(),
+        
+        .hr_10s(hr_10s_2),
+        .hr_1s(hr_1s_2),
+        .min_10s(min_10s_2),
+        .min_1s(min_1s_2),
+        .sec_10s(sec_10s_2),
+        .sec_1s(sec_1s_2),
+        .m_10s(m_10s_2),
+        .m_1s(m_1s_2),
+        .d_10s(d_10s_2),
+        .d_1s(d_1s_2),
+        .y_10s(y_10s_2),
+        .y_1s(y_1s_2),
+        .c_10s(c_10s_2),
+        .c_1s(c_1s_2)
+    );
 
         
 ps2_kbd_top ps2_kbd (
